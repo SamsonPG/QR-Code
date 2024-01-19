@@ -1,0 +1,111 @@
+
+
+  /* Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Apply Poppins font to all elements inside the body */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    width: 70%;
+    min-width: 200px;
+    max-width: 400px;
+    height: 70%;
+    padding: 20px;
+    display: flex;
+  
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.card__tags {
+    overflow: auto;
+    height: 80%;
+   
+}
+
+.card__tags::-webkit-scrollbar {
+    width: 12px;
+}
+
+.card__tags::-webkit-scrollbar-thumb {
+    background-color: #a0a0a0;
+    border-radius: 10px;
+}
+
+.card__tags::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+
+.title {
+    color: #06a6fc;
+    font-weight: 900;
+    font-size: 1.7em;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+}
+
+.title2 {
+    color: #000000;
+    font-weight: 900;
+    font-size: 1em;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+
+.tag__name {
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    font-size: 1.1em;
+    background-color: #ffffff;
+    border-radius: 70em;
+    margin: 18px 16px 18px 0;
+    padding: 20px;
+    position: relative;
+    text-transform: lowercase;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  
+}
+
+.tag__name::before,
+.tag__name::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #06a6fc;
+}
+
+.tag__name::before {
+    left: 7px;
+}
+
+.tag__name::after {
+    right: 7px;
+}
+
+.tag__name:hover {
+    transform: scale(1.02);
+    background-color: #000000;
+    color: #ffffff;
+}
