@@ -110,5 +110,5 @@ body {
     color: #ffffff;
 }
 .tag__name a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
