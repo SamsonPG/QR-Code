@@ -109,6 +109,6 @@ body {
     background-color: #000000;
     color: #ffffff;
 }
-.a{
+.tag__name a {
     text-decoration: none;
 }
