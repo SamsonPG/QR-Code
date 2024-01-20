@@ -162,3 +162,22 @@ color: inherit !important;
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(2px);
    }
+
+   .end-tag{
+    color: #000000;
+    font-weight: 900;
+    font-size: 1em;
+   
+    display: block;
+    margin:10px;
+
+   }
+   .end-tag2{
+    color: #000000;
+    font-weight: 900;
+    font-size: 1em;
+   
+    display: block;
+    margin:0px;
+
+   }
