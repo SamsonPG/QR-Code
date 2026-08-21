@@ -217,6 +217,11 @@ a {
   transition: background-color 0.18s var(--ease), border-color 0.18s var(--ease), color 0.18s var(--ease);
 }
 
+.btn[hidden],
+[hidden] {
+  display: none !important;
+}
+
 .btn--fill {
   background: var(--green);
   color: #fff;
