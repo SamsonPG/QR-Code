@@ -75,12 +75,12 @@ a {
   min-height: var(--topbar);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 0.65rem;
 }
 
 .topbar__name {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: -0.05em;
   text-decoration: none;
@@ -90,47 +90,6 @@ a {
 
 .topbar__name:hover {
   color: var(--green-deep);
-}
-
-.topbar__icons {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 0.2rem;
-  min-width: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding-block: 0.25rem;
-}
-
-.topbar__icons::-webkit-scrollbar {
-  display: none;
-}
-
-.topbar__icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  min-width: 2.5rem;
-  border-radius: 0.65rem;
-  border: 1px solid transparent;
-  background: transparent;
-  text-decoration: none;
-  transition: background-color 0.15s var(--ease), border-color 0.15s var(--ease);
-}
-
-.topbar__icons a:hover {
-  background: var(--surface);
-  border-color: var(--line);
-}
-
-.topbar__icons img {
-  width: 1.15rem;
-  height: 1.15rem;
-  border-radius: 0.28rem;
-  display: block;
 }
 
 .sheet {
@@ -278,8 +237,7 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   .btn,
-  .links a,
-  .topbar__icons a {
+  .links a {
     transition: none;
   }
 }
