@@ -289,6 +289,10 @@ a {
   align-items: stretch;
 }
 
+.links__row:has(.links__fallback[hidden]) {
+  grid-template-columns: 1fr;
+}
+
 .links__main {
   min-width: 0;
 }
