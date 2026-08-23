@@ -1,14 +1,14 @@
 :root,
 html[data-theme="light"] {
   color-scheme: light;
-  --paper: #faf8f2;
+  --paper: #f5f9fa;
   --ink: #1c1917;
-  --muted: #78716c;
+  --muted: #64748b;
   --line: rgba(28, 25, 23, 0.12);
-  --green: #c9bc43;
-  --green-soft: #f5f0d4;
-  --green-deep: #7a6f18;
-  --card: #fffcf5;
+  --green: #18656f;
+  --green-soft: #d9eef1;
+  --green-deep: #0e4a52;
+  --card: #fbfdfe;
   --surface: #ffffff;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --pad: clamp(1rem, 4vw, 1.5rem);
@@ -22,9 +22,9 @@ html[data-theme="dark"] {
   --ink: #fafaf9;
   --muted: #a8a29e;
   --line: rgba(250, 250, 249, 0.12);
-  --green: #d4c95a;
-  --green-soft: rgba(201, 188, 67, 0.16);
-  --green-deep: #e8dc82;
+  --green: #52b8c7;
+  --green-soft: rgba(82, 184, 199, 0.15);
+  --green-deep: #8ad4df;
   --card: #1c1917;
   --surface: #292524;
   --brand-trytokka: #34d399;
@@ -33,7 +33,7 @@ html[data-theme="dark"] {
   --brand-trycalculatingnow: #fbbf24;
   --brand-acsaven: #94a3b8;
   --brand-20x: #60a5fa;
-  --brand-soundshoppie: #ca8a04;
+  --brand-soundshoppie: #d4c95a;
 }
 
 :root,
@@ -44,7 +44,7 @@ html[data-theme="light"] {
   --brand-trycalculatingnow: #b45309;
   --brand-acsaven: #475569;
   --brand-20x: #1d4ed8;
-  --brand-soundshoppie: #a16207;
+  --brand-soundshoppie: #c9bc43;
 }
 
 [data-product="trytokka"] { --product-accent: var(--brand-trytokka); }
