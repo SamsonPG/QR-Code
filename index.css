@@ -90,6 +90,7 @@ body {
 }
 .pg-haven__wash,
 .pg-haven__grid,
+.pg-haven__ripple,
 .pg-haven__orb,
 .pg-haven__nodes,
 .pg-haven__vignette {
@@ -112,6 +113,21 @@ body {
   -webkit-mask-image: radial-gradient(ellipse 78% 68% at 50% 42%, transparent 12%, #000 78%);
   mask-image: radial-gradient(ellipse 78% 68% at 50% 42%, transparent 12%, #000 78%);
   opacity: 0.34;
+}
+.pg-haven__ripple {
+  left: 50%;
+  top: 42%;
+  right: auto;
+  bottom: auto;
+  width: min(92vw, 34rem);
+  height: min(92vw, 34rem);
+  translate: -50% -50%;
+  border-radius: 50%;
+  opacity: 0.5;
+  background:
+    radial-gradient(circle, transparent 0%, transparent 42%, color-mix(in srgb, var(--green) 16%, transparent) 43%, transparent 44%),
+    radial-gradient(circle, transparent 0%, transparent 58%, color-mix(in srgb, var(--green) 11%, transparent) 59%, transparent 60%),
+    radial-gradient(circle, transparent 0%, transparent 74%, color-mix(in srgb, var(--green) 7%, transparent) 75%, transparent 76%);
 }
 .pg-haven__orb {
   inset: auto;
@@ -190,19 +206,14 @@ a {
   border: 0;
 }
 
-/* Frosted sticky name bar */
+/* Sticky name bar — solid fill (no backdrop-filter: cheaper paint / SI) */
 .topbar {
   position: sticky;
   top: 0;
   z-index: 40;
   min-height: var(--topbar);
-  background: color-mix(in srgb, var(--paper) 72%, transparent);
-  backdrop-filter: saturate(1.35) blur(16px);
-  -webkit-backdrop-filter: saturate(1.35) blur(16px);
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
   border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent);
-  box-shadow:
-    0 1px 0 color-mix(in srgb, var(--surface) 70%, transparent),
-    0 10px 28px -18px rgba(14, 22, 18, 0.45);
 }
 
 .topbar__inner {
@@ -358,6 +369,17 @@ a {
 
 .btn--fill:hover {
   filter: brightness(1.06);
+}
+
+/* Light plum on dark theme fails white-on-plum contrast — ink fill text */
+html[data-theme="dark"] .btn--fill {
+  color: #0c0a09;
+  background: var(--green);
+}
+
+html[data-theme="dark"] .btn--fill:hover {
+  color: #0c0a09;
+  filter: brightness(1.08);
 }
 
 .btn--line {
@@ -696,13 +718,6 @@ a {
   color: var(--green-deep);
   border-color: color-mix(in srgb, var(--green) 35%, var(--line));
   pointer-events: none;
-}
-.scroll-to-top--scrolling svg {
-  animation: scroll-to-top-launch 1.1s ease-out infinite;
-}
-@keyframes scroll-to-top-launch {
-  0%, 100% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(-4px); opacity: 0.9; }
 }
 @media print {
   .scroll-to-top,
