@@ -79,7 +79,7 @@ body {
   isolation: isolate;
 }
 
-/* Personal haven — Stripe mesh+beams in one wash layer (LH-safe paint budget) */
+/* Personal haven — TryTokka/Acsaven mesh language (Ink Plum), no Stripe beams; LH-safe */
 .pg-haven {
   position: fixed;
   inset: 0;
@@ -96,68 +96,117 @@ body {
   inset: 0;
 }
 .pg-haven__wash {
-  background:
-    repeating-linear-gradient(
-      -18deg,
-      transparent 0,
-      transparent 52px,
-      color-mix(in srgb, var(--green) 8%, transparent) 52px,
-      color-mix(in srgb, var(--green) 8%, transparent) 53px
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 110% 90% at 0% 0%, color-mix(in srgb, var(--paper-2, var(--paper)) 70%, var(--paper)) 0%, transparent 78%),
+    radial-gradient(ellipse 110% 90% at 100% 100%, color-mix(in srgb, var(--paper-2, var(--paper)) 55%, var(--paper)) 0%, transparent 78%),
+    radial-gradient(
+      ellipse 72% 58% at 50% 36%,
+      color-mix(in srgb, var(--green) 22%, transparent) 0%,
+      color-mix(in srgb, var(--green) 12%, transparent) 22%,
+      color-mix(in srgb, var(--green-soft) 55%, transparent) 48%,
+      transparent 88%
     ),
-    radial-gradient(ellipse 40% 34% at 72% 22%, color-mix(in srgb, var(--green) 16%, transparent), transparent 70%),
-    radial-gradient(ellipse 36% 30% at 22% 58%, color-mix(in srgb, var(--green-soft) 90%, transparent), transparent 68%),
-    radial-gradient(ellipse 90% 55% at 50% -10%, color-mix(in srgb, var(--green) 18%, transparent), transparent 55%),
-    linear-gradient(165deg, var(--paper) 0%, color-mix(in srgb, var(--paper) 86%, var(--green-soft)) 100%);
+    radial-gradient(
+      ellipse 78% 70% at 16% 32%,
+      color-mix(in srgb, var(--green) 16%, transparent) 0%,
+      color-mix(in srgb, var(--green-soft) 70%, transparent) 40%,
+      transparent 88%
+    ),
+    radial-gradient(
+      ellipse 76% 66% at 86% 28%,
+      color-mix(in srgb, var(--green-deep) 14%, transparent) 0%,
+      color-mix(in srgb, var(--green) 6%, transparent) 42%,
+      transparent 88%
+    ),
+    radial-gradient(
+      ellipse 64% 58% at 30% 72%,
+      color-mix(in srgb, var(--green-soft) 80%, transparent) 0%,
+      transparent 78%
+    ),
+    radial-gradient(
+      ellipse 68% 60% at 78% 74%,
+      color-mix(in srgb, var(--green) 8%, transparent) 0%,
+      transparent 82%
+    ),
+    linear-gradient(180deg, var(--paper) 0%, color-mix(in srgb, var(--paper) 88%, var(--green-soft)) 100%);
+  background-blend-mode:
+    multiply, multiply, screen, screen, screen, screen, screen, normal;
+}
+html[data-theme="dark"] .pg-haven__wash {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 110% 90% at 0% 0%, color-mix(in srgb, var(--paper) 55%, #000) 0%, transparent 78%),
+    radial-gradient(ellipse 110% 90% at 100% 100%, color-mix(in srgb, var(--paper) 50%, #000) 0%, transparent 78%),
+    radial-gradient(
+      ellipse 72% 58% at 50% 36%,
+      color-mix(in srgb, var(--green) 18%, transparent) 0%,
+      color-mix(in srgb, var(--green) 10%, transparent) 22%,
+      color-mix(in srgb, var(--green) 4%, transparent) 48%,
+      transparent 90%
+    ),
+    radial-gradient(
+      ellipse 78% 70% at 16% 32%,
+      color-mix(in srgb, var(--green) 14%, transparent) 0%,
+      color-mix(in srgb, var(--green) 6%, transparent) 40%,
+      transparent 90%
+    ),
+    radial-gradient(
+      ellipse 76% 66% at 86% 28%,
+      color-mix(in srgb, var(--green-deep) 12%, transparent) 0%,
+      color-mix(in srgb, var(--green) 5%, transparent) 42%,
+      transparent 90%
+    ),
+    radial-gradient(
+      ellipse 64% 58% at 30% 72%,
+      color-mix(in srgb, var(--green) 8%, transparent) 0%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse 68% 60% at 78% 74%,
+      color-mix(in srgb, var(--green) 7%, transparent) 0%,
+      transparent 82%
+    ),
+    linear-gradient(180deg, var(--paper) 0%, #09080c 100%);
+  background-blend-mode:
+    multiply, multiply, screen, screen, screen, screen, screen, normal;
 }
 .pg-haven__grid {
   background-image:
-    linear-gradient(color-mix(in srgb, var(--green) 10%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--green) 10%, transparent) 1px, transparent 1px);
-  background-size: 2.75rem 2.75rem;
+    linear-gradient(color-mix(in srgb, var(--green) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--green) 8%, transparent) 1px, transparent 1px);
+  background-size: 3rem 3rem;
   background-position: center;
-  -webkit-mask-image: radial-gradient(ellipse 78% 68% at 50% 42%, transparent 18%, #000 80%);
-  mask-image: radial-gradient(ellipse 78% 68% at 50% 42%, transparent 18%, #000 80%);
-  opacity: 0.26;
+  -webkit-mask-image: radial-gradient(ellipse 72% 64% at 50% 42%, transparent 18%, #000 78%);
+  mask-image: radial-gradient(ellipse 72% 64% at 50% 42%, transparent 18%, #000 78%);
+  opacity: 0.22;
 }
+html[data-theme="dark"] .pg-haven__grid { opacity: 0.14; }
 .pg-haven__orb {
   inset: auto;
   border-radius: 50%;
 }
 .pg-haven__orb--a {
-  width: min(48vw, 20rem);
-  height: min(48vw, 20rem);
+  width: min(48vw, 22rem);
+  height: min(48vw, 22rem);
   top: -10%;
   left: -12%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--green) 18%, transparent) 0%, transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--green) 18%, transparent) 0%, transparent 68%);
 }
 .pg-haven__orb--b {
-  width: min(44vw, 18rem);
-  height: min(44vw, 18rem);
+  width: min(44vw, 20rem);
+  height: min(44vw, 20rem);
   right: -12%;
-  top: 14%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--green-deep) 12%, transparent) 0%, transparent 72%);
+  top: 10%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--green-deep) 12%, transparent) 0%, transparent 70%);
 }
 .pg-haven__vignette {
   background: radial-gradient(
-    ellipse 62% 58% at 50% 42%,
+    ellipse 58% 52% at 50% 42%,
     transparent 42%,
-    color-mix(in srgb, var(--paper) 50%, transparent) 100%
+    color-mix(in srgb, var(--paper) 42%, transparent) 100%
   );
 }
-html[data-theme="dark"] .pg-haven__wash {
-  background:
-    repeating-linear-gradient(
-      -18deg,
-      transparent 0,
-      transparent 52px,
-      color-mix(in srgb, var(--green) 5%, transparent) 52px,
-      color-mix(in srgb, var(--green) 5%, transparent) 53px
-    ),
-    radial-gradient(ellipse 40% 34% at 72% 22%, color-mix(in srgb, var(--green) 14%, transparent), transparent 70%),
-    radial-gradient(ellipse 85% 50% at 50% -10%, color-mix(in srgb, var(--green) 16%, transparent), transparent 55%),
-    linear-gradient(165deg, var(--paper) 0%, #09080c 100%);
-}
-html[data-theme="dark"] .pg-haven__grid { opacity: 0.16; }
 
 .sheet {
   position: relative;
