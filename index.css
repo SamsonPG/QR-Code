@@ -75,10 +75,97 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   color: var(--ink);
-  background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in srgb, var(--green) 14%, transparent), transparent 55%),
-    var(--paper);
+  background-color: var(--paper);
+  isolation: isolate;
 }
+
+/* Personal haven — auth-inspired, Ink Plum only (scan-grid motif for QR hub) */
+.pg-haven {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  contain: paint;
+}
+.pg-haven__wash,
+.pg-haven__grid,
+.pg-haven__orb,
+.pg-haven__nodes,
+.pg-haven__vignette {
+  position: absolute;
+  inset: 0;
+}
+.pg-haven__wash {
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -8%, color-mix(in srgb, var(--green) 16%, transparent), transparent 58%),
+    radial-gradient(ellipse 55% 45% at 8% 72%, color-mix(in srgb, var(--green-soft) 80%, transparent), transparent 62%),
+    radial-gradient(ellipse 50% 40% at 92% 18%, color-mix(in srgb, var(--green) 10%, transparent), transparent 65%),
+    linear-gradient(180deg, var(--paper) 0%, color-mix(in srgb, var(--paper) 88%, var(--green-soft)) 100%);
+}
+.pg-haven__grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--green) 11%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--green) 11%, transparent) 1px, transparent 1px);
+  background-size: 2.75rem 2.75rem;
+  background-position: center;
+  -webkit-mask-image: radial-gradient(ellipse 78% 68% at 50% 42%, transparent 12%, #000 78%);
+  mask-image: radial-gradient(ellipse 78% 68% at 50% 42%, transparent 12%, #000 78%);
+  opacity: 0.34;
+}
+.pg-haven__orb {
+  inset: auto;
+  border-radius: 50%;
+}
+.pg-haven__orb--a {
+  width: min(52vw, 22rem);
+  height: min(52vw, 22rem);
+  top: -10%;
+  left: -14%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--green) 22%, transparent) 0%, transparent 70%);
+}
+.pg-haven__orb--b {
+  width: min(48vw, 20rem);
+  height: min(48vw, 20rem);
+  right: -12%;
+  top: 12%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--green-deep) 14%, transparent) 0%, transparent 72%);
+}
+.pg-haven__nodes {
+  opacity: 0.55;
+  background-image:
+    radial-gradient(1.2px 1.2px at 12% 18%, color-mix(in srgb, var(--green) 70%, transparent), transparent),
+    radial-gradient(1px 1px at 28% 8%, color-mix(in srgb, var(--ink) 35%, transparent), transparent),
+    radial-gradient(1.4px 1.4px at 72% 14%, color-mix(in srgb, var(--green) 65%, transparent), transparent),
+    radial-gradient(1px 1px at 88% 28%, color-mix(in srgb, var(--ink) 30%, transparent), transparent),
+    radial-gradient(1.1px 1.1px at 8% 62%, color-mix(in srgb, var(--green) 55%, transparent), transparent),
+    radial-gradient(1.3px 1.3px at 48% 78%, color-mix(in srgb, var(--ink) 28%, transparent), transparent),
+    radial-gradient(1px 1px at 82% 70%, color-mix(in srgb, var(--green) 50%, transparent), transparent),
+    radial-gradient(0.9px 0.9px at 36% 42%, color-mix(in srgb, var(--ink) 25%, transparent), transparent);
+}
+.pg-haven__vignette {
+  background: radial-gradient(
+    ellipse 62% 58% at 50% 42%,
+    transparent 40%,
+    color-mix(in srgb, var(--paper) 55%, transparent) 100%
+  );
+}
+html[data-theme="dark"] .pg-haven__wash {
+  background:
+    radial-gradient(ellipse 85% 50% at 50% -10%, color-mix(in srgb, var(--green) 18%, transparent), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, color-mix(in srgb, var(--green) 10%, transparent), transparent 60%),
+    radial-gradient(ellipse 45% 35% at 90% 20%, color-mix(in srgb, var(--green) 8%, transparent), transparent 62%),
+    linear-gradient(180deg, var(--paper) 0%, #09080c 100%);
+}
+html[data-theme="dark"] .pg-haven__grid { opacity: 0.22; }
+html[data-theme="dark"] .pg-haven__nodes { opacity: 0.4; }
+html[data-theme="light"] .pg-haven__nodes { opacity: 0.38; }
+
+.sheet {
+  position: relative;
+  z-index: 1;
+}
+.topbar { z-index: 40; }
 
 a {
   color: inherit;
