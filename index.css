@@ -1,14 +1,14 @@
 :root,
 html[data-theme="light"] {
   color-scheme: light;
-  --paper: #f5f9fa;
+  --paper: #f8f6fa;
   --ink: #1c1917;
-  --muted: #64748b;
+  --muted: #6b6570;
   --line: rgba(28, 25, 23, 0.12);
-  --green: #18656f;
-  --green-soft: #d9eef1;
-  --green-deep: #0e4a52;
-  --card: #fbfdfe;
+  --green: #5b3a6e;
+  --green-soft: #ebe4f0;
+  --green-deep: #3d2750;
+  --card: #fcfbfd;
   --surface: #ffffff;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --pad: clamp(1rem, 4vw, 1.5rem);
@@ -22,9 +22,9 @@ html[data-theme="dark"] {
   --ink: #fafaf9;
   --muted: #a8a29e;
   --line: rgba(250, 250, 249, 0.12);
-  --green: #52b8c7;
-  --green-soft: rgba(82, 184, 199, 0.15);
-  --green-deep: #8ad4df;
+  --green: #b794c9;
+  --green-soft: rgba(183, 148, 201, 0.16);
+  --green-deep: #d8c4e4;
   --card: #1c1917;
   --surface: #292524;
   --brand-trytokka: #34d399;
