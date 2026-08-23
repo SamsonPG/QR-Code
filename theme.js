@@ -4,7 +4,7 @@
  */
 (function () {
   var KEY = 'samsonpg-theme';
-  var LIGHT_META = '#faf7f5';
+  var LIGHT_META = '#faf8f2';
   var DARK_META = '#0c0a09';
 
   function boot(root) {
