@@ -33,7 +33,7 @@ html[data-theme="dark"] {
   --brand-trycalculatingnow: #fbbf24;
   --brand-acsaven: #94a3b8;
   --brand-20x: #60a5fa;
-  --brand-soundshoppie: #d4c95a;
+  --brand-soundshoppie: #ca8a04;
 }
 
 :root,
@@ -44,7 +44,7 @@ html[data-theme="light"] {
   --brand-trycalculatingnow: #b45309;
   --brand-acsaven: #475569;
   --brand-20x: #1d4ed8;
-  --brand-soundshoppie: #c9bc43;
+  --brand-soundshoppie: #a16207;
 }
 
 [data-product="trytokka"] { --product-accent: var(--brand-trytokka); }
