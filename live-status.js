@@ -56,6 +56,8 @@
     var desc = main.querySelector('.links__desc')
     var liveDesc = main.getAttribute('data-live-desc')
     var demoDesc = main.getAttribute('data-demo-desc') || 'Offline demo'
+    var titleEl = main.querySelector('.links__title')
+    var title = titleEl ? titleEl.textContent.trim() : 'Product'
     if (!live || !demo) return
 
     if (up) {
@@ -66,6 +68,11 @@
       main.setAttribute('href', demo)
       main.setAttribute('data-using-demo', 'true')
       if (desc) desc.textContent = demoDesc
+    }
+
+    var status = document.getElementById('live-status')
+    if (status) {
+      status.textContent = title + (up ? ' — opening live site' : ' — opening offline demo')
     }
   }
 
