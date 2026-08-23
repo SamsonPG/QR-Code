@@ -2,6 +2,7 @@
 html[data-theme="light"] {
   color-scheme: light;
   --paper: #f8f6fa;
+  --paper-2: #efeaf4;
   --ink: #1c1917;
   --muted: #6b6570;
   --line: rgba(28, 25, 23, 0.12);
@@ -96,35 +97,40 @@ body {
   inset: 0;
 }
 .pg-haven__wash {
-  /* Light: normal blend (screen washes plum away on paper — same fix as TryTokka light mesh) */
+  /* Light: normal blend + stronger Ink Plum so paper doesn’t flatten vs dark */
   background-color: var(--paper);
   background-image:
-    radial-gradient(ellipse 110% 90% at 0% 0%, color-mix(in srgb, var(--paper-2, #efeaf4) 85%, var(--paper)) 0%, transparent 78%),
-    radial-gradient(ellipse 110% 90% at 100% 100%, color-mix(in srgb, var(--green-soft) 90%, var(--paper)) 0%, transparent 78%),
+    radial-gradient(ellipse 110% 90% at 0% 0%, color-mix(in srgb, var(--paper-2, #efeaf4) 78%, var(--paper)) 0%, transparent 76%),
+    radial-gradient(ellipse 110% 90% at 100% 100%, color-mix(in srgb, var(--green-soft) 82%, var(--paper)) 0%, transparent 76%),
     radial-gradient(
       ellipse 78% 62% at 50% 32%,
-      color-mix(in srgb, var(--green) 30%, transparent) 0%,
-      color-mix(in srgb, var(--green) 16%, transparent) 26%,
+      color-mix(in srgb, var(--green) 42%, transparent) 0%,
+      color-mix(in srgb, var(--green) 22%, transparent) 28%,
       transparent 88%
     ),
     radial-gradient(
       ellipse 82% 72% at 12% 28%,
-      color-mix(in srgb, var(--green) 24%, transparent) 0%,
-      color-mix(in srgb, var(--green-soft) 80%, transparent) 45%,
+      color-mix(in srgb, var(--green) 34%, transparent) 0%,
+      color-mix(in srgb, var(--green-soft) 72%, transparent) 44%,
       transparent 88%
     ),
     radial-gradient(
       ellipse 80% 68% at 90% 22%,
-      color-mix(in srgb, var(--green-deep) 20%, transparent) 0%,
-      color-mix(in srgb, var(--green) 10%, transparent) 44%,
+      color-mix(in srgb, var(--green-deep) 28%, transparent) 0%,
+      color-mix(in srgb, var(--green) 14%, transparent) 44%,
       transparent 88%
     ),
     radial-gradient(
       ellipse 68% 58% at 28% 78%,
-      color-mix(in srgb, var(--green) 16%, transparent) 0%,
+      color-mix(in srgb, var(--green) 24%, transparent) 0%,
       transparent 80%
     ),
-    linear-gradient(180deg, var(--paper) 0%, color-mix(in srgb, var(--paper) 80%, var(--green-soft)) 100%);
+    radial-gradient(
+      ellipse 60% 50% at 78% 70%,
+      color-mix(in srgb, var(--green) 14%, transparent) 0%,
+      transparent 78%
+    ),
+    linear-gradient(180deg, var(--paper) 0%, color-mix(in srgb, var(--paper) 72%, var(--green-soft)) 100%);
   background-blend-mode: normal;
 }
 html[data-theme="dark"] .pg-haven__wash {
@@ -167,13 +173,13 @@ html[data-theme="dark"] .pg-haven__wash {
 }
 .pg-haven__grid {
   background-image:
-    linear-gradient(color-mix(in srgb, var(--green) 12%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--green) 12%, transparent) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--green) 16%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--green) 16%, transparent) 1px, transparent 1px);
   background-size: 3rem 3rem;
   background-position: center;
   -webkit-mask-image: radial-gradient(ellipse 72% 64% at 50% 42%, transparent 18%, #000 78%);
   mask-image: radial-gradient(ellipse 72% 64% at 50% 42%, transparent 18%, #000 78%);
-  opacity: 0.32;
+  opacity: 0.44;
 }
 html[data-theme="dark"] .pg-haven__grid { opacity: 0.14; }
 .pg-haven__orb {
@@ -185,16 +191,29 @@ html[data-theme="dark"] .pg-haven__grid { opacity: 0.14; }
   height: min(52vw, 24rem);
   top: -10%;
   left: -12%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--green) 28%, transparent) 0%, transparent 68%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--green) 40%, transparent) 0%, transparent 68%);
 }
 .pg-haven__orb--b {
   width: min(48vw, 22rem);
   height: min(48vw, 22rem);
   right: -12%;
   top: 10%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--green-deep) 26%, transparent) 0%, transparent 70%);
+}
+html[data-theme="dark"] .pg-haven__orb--a {
+  background: radial-gradient(circle, color-mix(in srgb, var(--green) 28%, transparent) 0%, transparent 68%);
+}
+html[data-theme="dark"] .pg-haven__orb--b {
   background: radial-gradient(circle, color-mix(in srgb, var(--green-deep) 18%, transparent) 0%, transparent 70%);
 }
 .pg-haven__vignette {
+  background: radial-gradient(
+    ellipse 62% 56% at 50% 40%,
+    transparent 52%,
+    color-mix(in srgb, var(--paper) 28%, transparent) 100%
+  );
+}
+html[data-theme="dark"] .pg-haven__vignette {
   background: radial-gradient(
     ellipse 58% 52% at 50% 42%,
     transparent 42%,
@@ -347,6 +366,23 @@ a {
   padding: 0.55rem 0 1.45rem;
 }
 
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  margin: 0 0 0.85rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--green) 28%, var(--line));
+  background: color-mix(in srgb, var(--green-soft) 70%, var(--surface));
+  color: var(--green-deep);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 /* Apple Hello–style greeting — solid ink for contrast */
 .hello {
   margin: 0 0 0.65rem;
@@ -374,6 +410,26 @@ a {
   justify-content: center;
   gap: 0.55rem;
   margin-top: 1.15rem;
+}
+
+.hero__quiet {
+  margin: 0.85rem 0 0;
+  font-size: 0.82rem;
+}
+.hero__quiet a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.5rem;
+  touch-action: manipulation;
+}
+.hero__quiet a:hover {
+  color: var(--green-deep);
 }
 
 .btn {
