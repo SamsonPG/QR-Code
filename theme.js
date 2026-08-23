@@ -4,8 +4,8 @@
  */
 (function () {
   var KEY = 'samsonpg-theme';
-  var LIGHT_META = '#f1f5f9';
-  var DARK_META = '#0b1220';
+  var LIGHT_META = '#faf7f5';
+  var DARK_META = '#0c0a09';
 
   function boot(root) {
     var key = root.getAttribute('data-theme-key') || KEY;
