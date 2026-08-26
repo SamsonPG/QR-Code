@@ -745,6 +745,103 @@ html[data-theme="dark"] .btn--fill:hover {
   color: var(--muted);
 }
 
+.sheet__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.sheet__body > .group {
+  margin-top: 0;
+}
+
+.sheet__body > .foot {
+  margin-top: 0.2rem;
+}
+
+/* Tablet+: use the width; two-up link tiles, still one hero column */
+@media (min-width: 40rem) {
+  :root,
+  html[data-theme="light"],
+  html[data-theme="dark"] {
+    --max: 44rem;
+    --pad: clamp(1.25rem, 3.5vw, 2rem);
+  }
+
+  .hello {
+    font-size: clamp(3.25rem, 9vw, 4.5rem);
+  }
+
+  .lede {
+    max-width: 42ch;
+    font-size: 1rem;
+  }
+
+  .links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+
+  .links > .links__item--flagship,
+  .links > li:has(> .links__main--email),
+  .links > li:has(> .links__row) {
+    grid-column: 1 / -1;
+  }
+
+  .group {
+    padding: 1.1rem 1.15rem;
+  }
+}
+
+/* Desktop: sticky intro beside the link groups */
+@media (min-width: 56rem) {
+  :root,
+  html[data-theme="light"],
+  html[data-theme="dark"] {
+    --max: 68rem;
+  }
+
+  .sheet {
+    display: grid;
+    grid-template-columns: minmax(17.5rem, 22rem) minmax(0, 1fr);
+    column-gap: clamp(1.5rem, 3vw, 2.75rem);
+    align-items: start;
+    padding-top: 1.5rem;
+  }
+
+  .sheet > .hero {
+    position: sticky;
+    top: calc(var(--topbar) + 1rem);
+    align-self: start;
+    text-align: left;
+    padding: 0.25rem 0 0;
+  }
+
+  .sheet > .hero .lede {
+    margin-inline: 0;
+  }
+
+  .sheet > .hero .actions {
+    justify-content: flex-start;
+  }
+
+  .sheet > .hero .hero__quiet {
+    text-align: left;
+  }
+
+  .sheet > .hero .hello {
+    font-size: clamp(3rem, 4.5vw, 4rem);
+  }
+
+  .sheet > .sheet__body {
+    min-width: 0;
+  }
+
+  .sheet__body > .foot {
+    text-align: left;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .btn,
   .links a {
