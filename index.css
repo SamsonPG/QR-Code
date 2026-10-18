@@ -34,6 +34,8 @@ html[data-theme="dark"] {
   --brand-trycalculatingnow: #fbbf24;
   --brand-acsaven: #94a3b8;
   --brand-20x: #60a5fa;
+  --brand-recruitbee: #38bdf8;
+  --brand-lifeweb: #93c5fd;
   --brand-soundshoppie: #d4c95a;
 }
 
@@ -45,6 +47,8 @@ html[data-theme="light"] {
   --brand-trycalculatingnow: #b45309;
   --brand-acsaven: #475569;
   --brand-20x: #1d4ed8;
+  --brand-recruitbee: #0284c7;
+  --brand-lifeweb: #1e3a8a;
   --brand-soundshoppie: #c9bc43;
 }
 
@@ -54,6 +58,8 @@ html[data-theme="light"] {
 [data-product="trycalculatingnow"] { --product-accent: var(--brand-trycalculatingnow); }
 [data-product="acsaven"] { --product-accent: var(--brand-acsaven); }
 [data-product="20x"] { --product-accent: var(--brand-20x); }
+[data-product="recruitbee"] { --product-accent: var(--brand-recruitbee); }
+[data-product="lifeweb"] { --product-accent: var(--brand-lifeweb); }
 [data-product="soundshoppie"] { --product-accent: var(--brand-soundshoppie); }
 
 [data-product] .links__title { color: var(--product-accent); }
