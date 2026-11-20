@@ -1,13 +1,27 @@
 /**
  * Per-product live swap on QR card:
  * - Live up → main row opens live URL (no Demo chip)
- * - Live down → main row opens offline /static demo instead
+ * - Live down → main row opens the free backup address (data-fallback-href) if there is one,
+ *   else the offline /static demo
+ * - A data-live-check that is an image URL is probed as an image only: a parked or lapsed
+ *   domain still answers fetch(), but it cannot serve that site's own image.
  * No global Homepage demos hub.
  */
 (function () {
   var TIMEOUT_MS = 4500
 
+  function probeImage(url) {
+    return new Promise(function (resolve) {
+      var img = new Image()
+      var timer = setTimeout(function () { resolve(false) }, TIMEOUT_MS)
+      img.onload = function () { clearTimeout(timer); resolve(true) }
+      img.onerror = function () { clearTimeout(timer); resolve(false) }
+      img.src = url + (url.indexOf('?') < 0 ? '?' : '&') + '_=' + Date.now()
+    })
+  }
+
   function probe(url) {
+    if (/.(svg|png|ico|jpe?g|webp)$/i.test(url)) return probeImage(url)
     var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null
     var timer = setTimeout(function () {
       if (ctrl) ctrl.abort()
@@ -64,6 +78,10 @@
       main.setAttribute('href', live)
       main.removeAttribute('data-using-demo')
       if (desc && liveDesc) desc.textContent = liveDesc
+    } else if (main.getAttribute('data-fallback-href')) {
+      main.setAttribute('href', main.getAttribute('data-fallback-href'))
+      main.removeAttribute('data-using-demo')
+      if (desc && liveDesc) desc.textContent = liveDesc
     } else {
       main.setAttribute('href', demo)
       main.setAttribute('data-using-demo', 'true')
@@ -72,7 +90,7 @@
 
     var status = document.getElementById('live-status')
     if (status) {
-      status.textContent = title + (up ? ' — opening live site' : ' — opening offline demo')
+      status.textContent = title + (up ? ' — opening live site' : main.getAttribute('data-fallback-href') ? ' — opening backup address' : ' — opening offline demo')
     }
   }
 
